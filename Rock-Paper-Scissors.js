@@ -13,23 +13,17 @@ let humanScore=0;
         // Create A Variable That Create A Random Number Between 0,1 or 2  
           random=Math.floor(Math.random()*(2-0+1))
         // Give The Values To Each Number To The Game Options 
-          if(random==0){
-
-            computerwordchoose="ROCK"
-
-          }
-          else if(random==1){
-
-            computerwordchoose="PAPER"
-            
-
-
-          }
-          else if(random==2){
-            computerwordchoose="SCISSORS"
-            
-            
-          }
+          switch(random){
+            case 0:
+              computerwordchoose="ROCK"
+              break;
+            case 1:
+              computerwordchoose="PAPER"
+              break;
+            case 2:
+              computerwordchoose="SCISSORS"
+              break;
+                      }
         // Return The Computer Choice 
      
           return random
@@ -53,19 +47,18 @@ let humanScore=0;
           }
         //Turn The Human Option To Number 
 
-          if(answer_Upper()=="ROCK"){
-          return numeric_answer=0
-          }
-          else if(answer_Upper()=="PAPER"){
-          
-          return numeric_answer=1
-          }
-          else if(answer_Upper()=="SCISSORS"){
-            
-            return numeric_answer=2
-          }
-          else{
-            return "You Write Wrong Try It Again Bro!!"
+          switch (answer_Upper()) {
+            case "ROCK":
+              return numeric_answer=0
+              break;
+            case "PAPER":
+              return numeric_answer=1
+              break;
+            case "SCISSORS":
+              return numeric_answer=2
+              break;
+            default :
+              return `You Write ${answer_Lower} Try It Again Bro!!`
           }
   
     } 
